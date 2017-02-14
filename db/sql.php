@@ -1,16 +1,16 @@
 <?php
-require '..\..\..\includes\db_settings.php';
+require '..\..\..\includes\settings.php';
 try {
     $pdo = new PDO(
         sprintf(
             'mysql:host=%s;dbname=%s;port=%s;charset=%s',
-            $settings['host'],
-            $settings['name'],
-            $settings['port'],
-            $settings['charset']
+            $db_settings['host'],
+            $db_settings['name'],
+            $db_settings['port'],
+            $db_settings['charset']
         ),
-        $settings['username'],
-        $settings['password']
+        $db_settings['username'],
+        $db_settings['password']
     );
 } catch (PDOException $e) {
     // Database connection failed
